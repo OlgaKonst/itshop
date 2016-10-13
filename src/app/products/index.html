@@ -1,17 +1,4 @@
-<div class="contant">
+<div class="content">
   <h2>Goods</h2>
-  <div ng-repeat="item in products.data track by item._id">
-    <h3>{{item.title}}</h3>
-    <div>Artist: {{item.artist}}</div>
-    <div>
-      Album: {{item.album}}
-      <div>
-        <img ng-src="{{item.albumCover}}"
-      </div>
-    </div>
-    <div>Genre: {{item.genre}}</div>
-    <div>Cost: {{item.cost}}</div>
-    <div>ReleaseDate: {{item.releaseDate | date: 'yyyy'}}</div>
-
-  </div>
+  <card ng-repeat="product in products.data track by product._id" product="product"></card>
 </div>

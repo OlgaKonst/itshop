@@ -13,7 +13,9 @@
         vm.data = response.data;
       });
 
-
+  vm.clickMe = function(argument) {
+    console.log('click!!!');
+  }
 
 
   }
