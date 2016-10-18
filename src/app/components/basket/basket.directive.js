@@ -21,7 +21,11 @@
     function BasketController(Basket) {
       var vm = this;
       vm.basket = Basket.get();
-      console.log(vm.basket);
+     // console.log(vm.basket);
+      Basket.subscribe(function(data) {
+        vm.basket = data;
+        console.log('vm.baske',vm.basket);
+      })
     }
     return directive;
   }
