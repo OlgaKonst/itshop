@@ -3,23 +3,20 @@
 
   angular
     .module('itshop')
-    .config(routeConfig);
-
-  function routeConfig($routeProvider) {
-    $routeProvider
-      .when('/products', {
-        templateUrl: 'app/products/index.html',
-        controller: 'ProductsController',
-        controllerAs: 'products'
+    .config(function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state('products', {
+          url: '/products',
+          templateUrl: "app/products/index.html",
+          controller: 'ProductsController',
+          controllerAs: 'products'
       })
-      .when('/basket', {
-        templateUrl: 'app/basket/index.html',
-        controller: 'BasketController',
-        controllerAs: 'basket'
-      })
-      .otherwise({
-        redirectTo: '/products'
-      });
-  }
-
+        .state('basket', {
+          url: '/basket',
+          templateUrl: 'app/basket/index.html',
+          controller: 'BasketController',
+          controllerAs: 'basket'
+        });
+      $urlRouterProvider.otherwise('/products')
+    });
 })();

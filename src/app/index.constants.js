@@ -5,6 +5,11 @@
   angular
     .module('itshop')
     .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('userConfig', {
+      CURRENCY: '$',
+      LANG: 'en',
+      ENV: 'dev'
+    });
 
 })();

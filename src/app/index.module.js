@@ -2,6 +2,8 @@
   'use strict';
 
   angular
-    .module('itshop', ['ngRoute', 'toastr']);
+    .module('itshop', [
+        'toastr',
+        'ui.router']);
 
 })();

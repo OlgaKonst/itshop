@@ -34,7 +34,8 @@
       vm.buy = function() {
         Basket.add({
           count: vm.count,
-          id: vm.product._id
+          id: vm.product._id,
+          cost: vm.product.cost
         });
       }
     }

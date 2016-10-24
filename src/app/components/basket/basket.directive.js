@@ -18,14 +18,20 @@
 
 
     /** @ngInject */
-    function BasketController(Basket) {
+    function BasketController($scope, Basket, BasketEvents, userConfig) {
       var vm = this;
+      vm.currency = userConfig.CURRENCY;
       vm.basket = Basket.get();
-     // console.log(vm.basket);
-      Basket.subscribe(function(data) {
-        vm.basket = data;
-        console.log('vm.baske',vm.basket);
+      $scope.$on(BasketEvents.UPDATED, function(e, data) {
+        console.log(e, data);
       })
+
+ /*     Basket.subscribe(function(data) {
+        vm.basket = data;
+        vm.totalGoods = Basket.totalGoods;
+        vm.totalCost = Basket.totalCost;
+        console.log('vm.totalGoods',vm.totalGoods, Basket.totalCost);
+      })*/
     }
     return directive;
   }
